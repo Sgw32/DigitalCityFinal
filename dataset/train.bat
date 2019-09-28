@@ -1,0 +1,1 @@
+darknet.exe detector train dataset.conf trash_yolov3.cfg darknet53.conv.74

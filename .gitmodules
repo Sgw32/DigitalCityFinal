@@ -1,0 +1,6 @@
+[submodule "yolov3_to_openvino/YOLO-Annotation-Tool"]
+	path = yolov3_to_openvino/YOLO-Annotation-Tool
+	url = https://github.com/ManivannanMurugavel/YOLO-Annotation-Tool.git
+[submodule "raw_dataset/labelImg"]
+	path = labelImg
+	url = https://github.com/tzutalin/labelImg.git

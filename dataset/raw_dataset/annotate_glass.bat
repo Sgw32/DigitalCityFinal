@@ -1,0 +1,2 @@
+python annotate_glass.py
+pause
