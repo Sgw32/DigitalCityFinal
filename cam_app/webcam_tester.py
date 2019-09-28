@@ -2,11 +2,19 @@ import cv2
 import sys
 import os
 import tensorflow as tf
+import urllib.request
+import urllib.parse
+
 
 cascPath = "haarcascade_frontalface_alt.xml"
 faceCascade = cv2.CascadeClassifier(cascPath)
 
 video_capture = cv2.VideoCapture(0)
+
+def send_post_http():
+    #http://43210.ru/thankyou.php?t=9************&b=3
+    url = 'http://43210.ru/thankyou.php?t=9&b=3'
+    f = urllib.request.urlopen(url)
 
 def neural_process():
     image_path = 'testimg.jpg'
@@ -37,11 +45,14 @@ def neural_process():
             for node_id in top_k:
                 human_string = label_lines[node_id]
                 score = predictions[0][node_id]
+                if (score>0.6):
+                    print('thanks!')
+                    send_post_http()
                 print('%s (score = %.5f)' % (human_string, score))
 
 global obj_class
 
-obj_class = 'test'
+obj_class = ''
 
 while True:
     # Capture frame-by-frame
