@@ -4,3 +4,6 @@
 [submodule "raw_dataset/labelImg"]
 	path = labelImg
 	url = https://github.com/tzutalin/labelImg.git
+[submodule "QR-Code"]
+	path = QR-Code
+	url = https://github.com/meticulousCraftman/QR-Code.git
