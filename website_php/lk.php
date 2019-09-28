@@ -131,12 +131,23 @@
       <div class="feature-inner row">
         <?php
         $telephone = $_SESSION['telephone'];
-        $bally = $_SESSION['bally'];
-        $name = $_SESSION['name'];
-        
-        
+       
+        mysql_query('SET NAMES utf8;');
+        $r = mysql_query("SELECT * FROM garbage WHERE telephone='$telephone'");
+  mysql_query('SET NAMES utf8;');
+    $row = mysql_fetch_array($r);
+
+    if (isset($row["telephone"])){
+
+          $bally = $row['bally'];
+        $name = $row['name'];
+          
+
+          
+          
+        }
         echo "<br>";
-        echo "Здравствуйте ".$name." У вас ".$bally." баллов. (Потратить)";
+        echo "Здравствуйте ".$name." У вас ".$bally." баллов! (Получить бонусы)";
    // mysql_query('SET NAMES utf8;');
  // $r8 = mysql_query("SELECT * FROM users WHERE email='$email'");
   //mysql_query('SET NAMES utf8;');
@@ -151,18 +162,22 @@
 <!-- <p>Ваш персональный код для получения бонусов</p>
 <div id="qrcodeTable"></div> -->
 <p>Ваш персональный код для получения бонусов</p>
-<div id="qrcodeCanvas"></div>
+<!--<div id="qrcodeCanvas"></div>
+QRкод для Нейронной сети! -->
+<div id="qrcodeCanvas2"></div>
 
 <script>
   //jQuery('#qrcode').qrcode("this plugin is great");
-  jQuery('#qrcodeTable').qrcode({
-    render  : "<?=$telephone;?>",
-    text  : "http://43210.ru/thankyou.php?telephone=<?=$telephone;?>"
+  //jQuery('#qrcodeTable').qrcode({
+   // render  : "<?=$telephone;?>",
+  //  text  : "http://43210.ru/thankyou.php?telephone=<?=$telephone;?>"
+ // }); 
+ // jQuery('#qrcodeCanvas').qrcode({
+  //  text  : "http://43210.ru/thankyou.php?t=<?=$telephone;?>&b=3"
+ // }); 
+jQuery('#qrcodeCanvas2').qrcode({
+    text  : "<?=$telephone;?>RSK"
   }); 
-  jQuery('#qrcodeCanvas').qrcode({
-    text  : "http://43210.ru/thankyou.php?t=<?=$telephone;?>&b=3"
-  }); 
-
 </script>
 
 <br><br>

@@ -130,8 +130,8 @@
     <div class="container-fluid">
       <div class="feature-inner row">
         <?php
-        if (isset($_GET['t'])) {$telephone = $_GET['t'];}
-        if (isset($_GET['b'])) {$b = $_GET['b'];}
+        if (isset($_GET['t'])) {$telephone = (int)$_GET['t'];}
+        if (isset($_GET['b'])) {$b = (int)$_GET['b'];}
 
   mysql_query('SET NAMES utf8;');
   $r = mysql_query("SELECT * FROM garbage WHERE telephone='$telephone'");
