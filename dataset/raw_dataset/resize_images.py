@@ -45,7 +45,7 @@ if __name__ == "__main__":
         )
     )
     for i, fname in enumerate(fnames):
-        print(".", end="", flush=True)
+        print("."+str(fname), end="", flush=True)
         img = cv2.imread(fname)
         img_small = cv2.resize(img, target_size)
         new_fname = "{}.{}".format(str(i), ext)
