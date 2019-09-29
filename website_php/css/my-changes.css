@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+
+.bg-green {background-color: #62CC7B !important;}
+.hero-image {margin: 32px;}
+.navbar {padding: 0 !important;}
+.display-4 {font-size: 3rem !important;
+font-weight: 700 !important;}
+.margin-right-2 {margin: 0 2rem 0 1rem !important;}
+
+.nav-link + .active {background-color: #62CC7B !important;}
+.white-space {display: block; margin: 2rem 0;}

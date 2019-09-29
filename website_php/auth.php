@@ -26,7 +26,7 @@ if ($_POST['telephone'] !='')  {
 					
 
 					
-					echo '<meta http-equiv="refresh" content="1;URL=lk.php" />';
+					echo '<meta http-equiv="refresh" content="1;URL=personal.php" />';
 				}
 				else {echo "Такого телефона нет";}
 
